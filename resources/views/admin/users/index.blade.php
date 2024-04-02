@@ -33,7 +33,7 @@
                                <td>{{$user->email}}</td>
                                <td>{{ $user->role == 1 ? 'Admin' : 'User' ;}}</td>
                                <td>
-                                   <a href="" class="btn btn-success">Edit</a>
+                                <a href="{{ route('admin.edituser',$user->id) }}" class="btn btn-success">Edit</a>
                                </td>
                              </tr>
                              @endforeach
