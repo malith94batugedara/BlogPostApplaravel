@@ -13,7 +13,7 @@ class PostFormRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,44 @@ class PostFormRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            //
+        $rules = [
+            'category_id'=>[
+                'required',
+                'integer'
+            ],
+            'name'=>[
+                'required',
+                'string'
+            ],
+            'slug'=>[
+                'required',
+                'string'
+            ],
+            'description'=>[
+                'required'
+            ],
+            'yt_iframe'=>[
+                'nullable',
+                'string'
+            ],
+            'meta_title'=>[
+                'required',
+                'string'
+            ],
+            'meta_description'=>[
+                'nullable',
+                'string'
+            ],
+            'meta_keyword'=>[
+                'nullable',
+                'string'
+            ],
+            'status'=>[
+                'nullable'
+            ],
+
         ];
+
+        return $rules;
     }
 }

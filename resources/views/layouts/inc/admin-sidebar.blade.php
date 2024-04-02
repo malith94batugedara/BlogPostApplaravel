@@ -20,7 +20,7 @@
                     </nav>
                 </div>
 
-                {{-- <a class="nav-link {{ Request::is('admin/posts') ? 'collapse active' : 'collapsed' ;}} || {{ Request::is('admin/add-posts') ? 'collapse active' : 'collapsed';}} || {{ Request::is('admin/edit-post/*') ? 'collapse active' : 'collapsed';}}" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePosts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link {{ Request::is('admin/posts') ? 'collapse active' : 'collapsed' ;}} || {{ Request::is('admin/add-posts') ? 'collapse active' : 'collapsed';}} || {{ Request::is('admin/edit-post/*') ? 'collapse active' : 'collapsed';}}" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePosts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Posts
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -32,7 +32,7 @@
                     </nav>
                 </div>
 
-                <a class="nav-link {{ Request::is('admin/users') ? 'active' : '';}}" href="{{ route('admin.users') }}">
+                {{-- <a class="nav-link {{ Request::is('admin/users') ? 'active' : '';}}" href="{{ route('admin.users') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     View Users
                 </a>

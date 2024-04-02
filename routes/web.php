@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,5 +40,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
      Route::put('/update-category/{category_id}', [CategoryController::class, 'update'])->name('admin.updatecategory');
 
     Route::get('/delete-category/{category_id}', [CategoryController::class, 'delete'])->name('admin.deletecategory');
+
+     //Posts Routes
+     Route::get('/posts', [PostController::class, 'index'])->name('admin.posts');
+
+     Route::get('/add-posts', [PostController::class, 'create'])->name('admin.addposts');
+ 
+     Route::post('/add-posts', [PostController::class, 'store'])->name('admin.addposts');
 
 });
