@@ -14,7 +14,7 @@
                             </div>
                         @endif
                      <div class="table-responsive">
-                       <table class="table table-dark">
+                       <table id="myDataTable" class="table table-dark">
                           <thead>
                             <tr>
                                <th>ID</th>
