@@ -31,7 +31,7 @@
                             </div><br>
                             <div class="form-group">
                               <label for="description">Description</label>
-                              <textarea name="description" class="form-control" placeholder="Enter Description" rows="3" ></textarea>
+                              <textarea name="description" id="my_summernote" class="form-control" placeholder="Enter Description" rows="3" ></textarea>
                             </div><br>
                             <div class="form-group">
                               <label for="image">Image</label>
@@ -43,7 +43,7 @@
                             </div><br>
                             <div class="form-group">
                               <label for="meta_description">Meta Description</label>
-                              <textarea name="meta_description" class="form-control" placeholder="Enter Meta Description" rows="3" ></textarea>
+                              <textarea name="meta_description" id="my_summernote" class="form-control" placeholder="Enter Meta Description" rows="3" ></textarea>
                             </div><br>
                             <div class="form-group">
                               <label for="meta_keyword">Meta Keyword</label>
