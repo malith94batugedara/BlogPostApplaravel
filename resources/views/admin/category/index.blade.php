@@ -36,8 +36,8 @@
                                </td>
                                <td>{{ $category->status == 1 ? 'Hidden' : 'Shown'}}</td>
                                <td>
-                                   <a href="" class="btn btn-success">Edit</a>
-                                   <a href="" class="btn btn-danger">Delete</a>
+                                   <a href="{{ route('admin.editcategory',$category->id) }}" class="btn btn-success">Edit</a>
+                                   <a href="{{ route('admin.deletecategory',$category->id) }}" class="btn btn-danger">Delete</a>
                                    {{-- <button type="button" value="{{ $category->id }}" class="btn btn-danger deleteCategoryBtn">Delete</button> --}}
                                </td>
                              </tr>
