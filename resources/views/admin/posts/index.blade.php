@@ -33,8 +33,8 @@
                                <td>{{$post->name}}</td>
                                <td>{{ $post->status == 1 ? 'Hidden' : 'Shown' ;}}</td>
                                <td>
-                                   <a href="" class="btn btn-success">Edit</a>
-                                   <a href="" class="btn btn-danger">Delete</a>
+                                   <a href="{{ route('admin.editpost',$post->id) }}" class="btn btn-success">Edit</a>
+                                   <a href="{{ route('admin.deletepost',$post->id) }}" class="btn btn-danger">Delete</a>
                                </td>
                              </tr>
                              @endforeach

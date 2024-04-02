@@ -42,4 +42,46 @@ class PostController extends Controller
          
 
     }
+
+    public function edit($post_id){
+        $category=Category::where('status',0)->get();
+        $post=Post::findOrFail($post_id);
+        return view('admin.posts.edit',compact('post','category'));
+    }
+
+    public function update(PostFormRequest $request,$post_id){
+
+         $data=$request->validated();
+
+         $post=Post::findOrFail($post_id);
+
+         $post->category_id=$data['category_id'];
+         $post->name=$data['name'];
+         $post->slug=Str::slug($data['slug']);
+         $post->description=$data['description'];
+         $post->yt_iframe=$data['yt_iframe'];
+         $post->meta_title=$data['meta_title'];
+         $post->meta_description=$data['meta_description'];
+         $post->meta_keyword=$data['meta_keyword'];
+         $post->status=$request->status == true ? 1 : 0 ;
+         $post->created_by=Auth::user()->id;
+
+         $post->update();
+
+        return redirect(route('admin.posts'))->with('status','Post Updated Successfully');
+
+    }
+
+    public function delete($post_id){
+         
+        $post=Post::findOrFail($post_id);
+
+        if($post){
+            $post->delete();
+            return redirect(route('admin.posts'))->with('status','Post Deleted Successfully');
+        }
+        else{
+            return redirect(route('admin.posts'))->with('status','Post ID Not Found');
+        }
+    }
 }
