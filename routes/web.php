@@ -48,4 +48,12 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
  
      Route::post('/add-posts', [PostController::class, 'store'])->name('admin.addposts');
 
+     Route::get('/edit-post/{post_id}', [PostController::class, 'edit'])->name('admin.editpost');
+
+     Route::put('/update-post/{post_id}', [PostController::class, 'update'])->name('admin.updatepost');
+
+    Route::get('/delete-post/{post_id}', [PostController::class, 'delete'])->name('admin.deletepost');
+
+    //  Route::post('/delete-post', [PostController::class, 'delete'])->name('admin.deletepost');
+
 });
